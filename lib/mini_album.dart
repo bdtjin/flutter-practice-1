@@ -14,34 +14,32 @@ class MiniAlbum extends StatelessWidget {
   final String title;
   final String artist;
 
-
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         // 가로 세로 동일한 크기로 쓸때
-        SizedBox.square(
-          dimension: 60,
-          child: RoundedImage(imageUrl: imageUrl)),
+        SizedBox.square(dimension: 60, child: RoundedImage(imageUrl: imageUrl)),
+        SizedBox(width: 15,),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                      title,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-          
-                    Text(
-                      artist,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold,
-                        height: 1,
-                      ),
-                    ),
+                title,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              ),
+
+              Text(
+                artist,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.bold,
+                  height: 1,
+                ),
+              ),
             ],
           ),
         ),

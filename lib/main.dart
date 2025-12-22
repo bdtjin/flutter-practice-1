@@ -62,38 +62,55 @@ class HomePage extends StatelessWidget {
               child: RoundedImage(imageUrl: 'https://picsum.photos/300/200'),
             ),
             // 제목행
-            TitleRow(title: "New Albums"),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: TitleRow(title: "New Albums"),
+            ),
             // 큰앨범 들어가는 로우
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 BigAlbum(
                   imageUrl: 'https://picsum.photos/id/825/200/200',
-                  title: '안녕',
+                  title: 'Messy',
                   artist: '로제',
                 ),
+                SizedBox(width: 18,),
                 BigAlbum(
-                  imageUrl: 'https://picsum.photos/id/220/200/200',
-                  title: 'Done',
-                  artist: '릴러말즈',
+                  imageUrl: 'https://picsum.photos/id/451/200/200',
+                  title: 'This Love',
+                  artist: 'Maroon 5',
                 ),
+                SizedBox(width: 18,),
                 BigAlbum(
-                  imageUrl: 'https://picsum.photos/id/322/200/200',
-                  title: 'Ex',
-                  artist: '로제',
+                  imageUrl: 'https://picsum.photos/id/497/200/200',
+                  title: 'Cry',
+                  artist: 'Benson Boone',
                 ),
               ],
             ),
-            TitleRow(title: "Song List"),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: TitleRow(title: "Song List"),
+            ),
             // 작은앨범 들어가는 로우
-            MiniAlbum(imageUrl: 'https://picsum.photos/id/322/200/200',
-                  title: 'ㅋ',
-                  artist: '아오오',),
-            MiniAlbum(imageUrl: 'https://picsum.photos/id/322/200/200',
-                  title: 'Ex',
-                  artist: '이제',),
-            MiniAlbum(imageUrl: 'https://picsum.photos/id/322/200/200',
-                  title: 'Ex',
-                  artist: '로제',),
+            MiniAlbum(
+              imageUrl: 'https://picsum.photos/id/33/200/200',
+              title: '나무',
+              artist: '카더가든',
+            ),
+            SizedBox(height: 15,),
+            MiniAlbum(
+              imageUrl: 'https://picsum.photos/id/390/200/200',
+              title: '무제',
+              artist: '도후',
+            ),
+            SizedBox(height: 15,),
+            MiniAlbum(
+              imageUrl: 'https://picsum.photos/id/416/200/200',
+              title: '이밤이지나면',
+              artist: '김연우',
+            ),
           ],
         ),
       ),
