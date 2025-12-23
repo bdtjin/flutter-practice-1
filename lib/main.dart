@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice_1/big_album.dart';
+import 'package:flutter_practice_1/extensions.dart';
 import 'package:flutter_practice_1/mini_album.dart';
 import 'package:flutter_practice_1/rounded_image.dart';
 import 'package:flutter_practice_1/title_row.dart';
@@ -54,18 +55,20 @@ class HomePage extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 20),
         child: ListView(
           children: [
-            SizedBox(height: 20),
+            20.h,
             // 상단 이미지
             AspectRatio(
               // 가로크기 / 세로 크기
               aspectRatio: 2.5 / 1,
               child: RoundedImage(imageUrl: 'https://picsum.photos/300/200'),
             ),
+            20.h,
             // 제목행
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: TitleRow(title: "New Albums"),
             ),
+            10.h,
             // 큰앨범 들어가는 로우
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -156,6 +159,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               SizedBox(width: 3),
+              3.w,
               Container(
                 width: 5,
                 height: 5,
@@ -171,3 +175,4 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
