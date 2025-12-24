@@ -66,6 +66,7 @@ class _HomePageState extends State<HomePage> {
       if (postList.isNotEmpty)
       Container(
         decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
           border: BoxBorder.all(),
         ),
         child: Column(children: [
