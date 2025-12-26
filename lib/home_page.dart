@@ -9,7 +9,7 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> { 
   List<Post> postList = [];
   @override
   void initState() {
@@ -86,9 +86,31 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('블로그 샘플'),
       ),
-      body: ListView(
-        padding: EdgeInsets.all(20),
-        children: ListViewChildren,
+      // ListVierw.builder : itemCount, 속성에 정의한 갯수만큼
+      // itemBuilder 속성에서 반환하는 위젯 보여주는 네임드 생성자!
+      body: ListView.builder(
+        itemCount: postList.length,
+        itemBuilder: (context, index) {
+          print(index);
+          Post p = postList[index];
+          Widget item = Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              border: BoxBorder.all(),
+            ),
+            padding: EdgeInsets.all(20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("포스트 아이디 : ${p.id}"),
+                Text("사용자 아이디 : ${p.userId}"),
+                Text("제목 : ${p.title}"),
+                Text("내용 : ${p.body}"),
+              ],
+            ),
+          );
+          return item;
+        },
       ),
     );
   }
