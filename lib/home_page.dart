@@ -59,24 +59,37 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     print("위젯 그리기 시작");
-    return Scaffold(appBar: AppBar
-    (title: Text('블로그 샘플'),
-    ),
-    body: ListView(children: [
-      if (postList.isNotEmpty)
-      Container(
+    // ListView의 children 속성에 들어갈 리스트 만들기
+    List<Widget> ListViewChildren = [];
+
+    for(var index = 0; index < postList.length; index++){
+      Post p = postList[index];
+      Widget item = Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           border: BoxBorder.all(),
         ),
-        child: Column(children: [
-          Text("${postList[0].id}"),
-          Text("${postList[0].userId}"),
-          Text("${postList[0].title}"),
-          Text("${postList[0].body}"),
-        ],),
-      )
-    ],),
+        padding: EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+          Text("포스트 아이디 : ${p.id}"),
+          Text("사용자 아이디 : ${p.userId}"),
+          Text("제목 : ${p.title}"),
+          Text("내용 : ${p.body}"),
+        ],
+        ),
+      );
+      ListViewChildren.add(item);
+    }
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('블로그 샘플'),
+      ),
+      body: ListView(
+        padding: EdgeInsets.all(20),
+        children: ListViewChildren,
+      ),
     );
   }
 }
