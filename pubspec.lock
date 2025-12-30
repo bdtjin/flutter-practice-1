@@ -75,7 +75,7 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-    http:
+  http:
     dependency: "direct main"
     description:
       name: http
@@ -208,7 +208,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.7"
-    typed_data:
+  typed_data:
     dependency: transitive
     description:
       name: typed_data
@@ -232,7 +232,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "15.0.2"
-    web:
+  web:
     dependency: transitive
     description:
       name: web
