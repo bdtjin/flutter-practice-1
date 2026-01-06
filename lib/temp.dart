@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice_1/home_view_model.dart';
 import 'package:flutter_practice_1/weather.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class Temp extends StatelessWidget {
-  const Temp({
-    super.key,
-    required this.weather,
-  });
+class Temp extends ConsumerWidget {
+  const Temp({super.key});
 
-  final Weather weather;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    // Widget ref :뷰모델을 관리하는 객체에게 상태 혹은 뷰모델 달라고 요청 할 수 있는 기능 제공하는 애!
+    // 상태 가지고 오기
+    HomeState state = ref.watch(homeViewModelProvider);
+    Weather? weather = state.weather;
     return Text(
-      "${weather.currentWeather.temperature}"
-      "${weather.units.temperature}", 
-      style: TextStyle(fontSize: 36));
+      "${weather?.currentWeather.temperature}"
+      "${weather?.units.temperature}",
+      style: TextStyle(fontSize: 36),
+    );
   }
 }

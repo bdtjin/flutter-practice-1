@@ -1,22 +1,13 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_practice_1/refresh_button.dart';
 import 'package:flutter_practice_1/speed.dart';
 import 'package:flutter_practice_1/temp.dart';
 import 'package:flutter_practice_1/weather.dart';
 import 'package:http/http.dart';
 
-class HomePage extends StatefulWidget {
-  @override
-  State<HomePage> createState() => _HomePageState();
-
-  // 의존성 주입!
-}
-class _HomePageState extends State<HomePage> {
-  Weather? weather;
-
-  String displayTemp = "";
-
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,15 +18,11 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            if (weather != null) Temp(weather: weather!), // weather 객체가 null이 아닐 때만 Temp 위젯을 표시
-            if (weather != null) Speed(weather: weather!),
-
-            IconButton(
-              onPressed: () async {
-                
-              },
-              icon: Icon(Icons.refresh),
-            ),
+            Temp(),
+            Speed(),
+            // if (weather != null) Temp(weather: weather!), // weather 객체가 null이 아닐 때만 Temp 위젯을 표시
+            // if (weather != null) Speed(weather: weather!),
+            RefreshButton(),
           ],
         ),
       ),
