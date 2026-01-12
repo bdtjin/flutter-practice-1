@@ -12,7 +12,7 @@ class Speed extends ConsumerWidget {
     Weather? weather = state.weather;
 
     return Text(
-      "${weather?.currentWeather.windSpeed} ${weather?.units.windSpeed}",
+      "${weather?.currentWeather.windspeed} ${weather?.currentWeatherUnits.windspeed}",
       style: TextStyle(fontSize: 36),
     );
   }

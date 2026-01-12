@@ -15,7 +15,7 @@ class Temp extends ConsumerWidget {
     Weather? weather = state.weather;
     return Text(
       "${weather?.currentWeather.temperature}"
-      "${weather?.units.temperature}",
+      "${weather?.currentWeatherUnits.temperature}",
       style: TextStyle(fontSize: 36),
     );
   }
