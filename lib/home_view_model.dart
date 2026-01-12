@@ -1,7 +1,7 @@
 // 1. 홈페이지에서 보여지는 상태 변수들 담는 클래스
 import 'dart:convert';
 
-import 'package:flutter_practice_1/weather.dart';
+import 'package:flutter_practice_1/model/weather.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart';
 
