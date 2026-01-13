@@ -1,6 +1,7 @@
 
 
 import 'package:flutter_practice_1/matzip.dart';
+import 'package:flutter_practice_1/matzip_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class HomeState {
@@ -13,7 +14,16 @@ class HomeViewModel extends Notifier<HomeState>{
   @override
   HomeState build() {
     print('뷰모델 build 호출됨');
+    getData();
     return HomeState(matzipList: []);
+  }
+
+  void getData() async {
+    print("getData 호출됨");
+    // 여기서 Firestore 데이터 가져와서 Matzip 리스트로 변환한 뒤
+    final repo = MatzipRepository ();
+    final matziplist = await repo.getAllMatzip ();
+    // 상태 업데이트!
   }
 }
 

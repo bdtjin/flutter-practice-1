@@ -1,16 +1,25 @@
-# flutter_practice_1
+# Freezed 사용법
 
-A new Flutter project.
+1. 패키지 추가
 
-## Getting Started
+```sh
+flutter pub add \
+  dev:build_runner \
+  freezed_annotation \
+  dev:freezed
+# if using freezed to generate fromJson/toJson, also add:
+flutter pub add json_annotation dev:json_serializable
+```
 
-This project is a starting point for a Flutter application.
+2. 클래스 작성 (freezed 문법대로)
 
-A few resources to get you started if this is your first Flutter project:
+3. 코드 생성
+```sh
+dart run build_runner watch -d
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+4. `.gitignore`에 생성된 파일 안 올라가게 추가!
+```
+*.freezed.dart
+*.g.dart
+```
