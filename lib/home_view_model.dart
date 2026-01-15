@@ -1,5 +1,4 @@
-
-
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_practice_1/matzip.dart';
 import 'package:flutter_practice_1/matzip_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -23,7 +22,8 @@ class HomeViewModel extends Notifier<HomeState>{
     // 여기서 Firestore 데이터 가져와서 Matzip 리스트로 변환한 뒤
     final repo = MatzipRepository ();
     final matziplist = await repo.getAllMatzip ();
-    // 상태 업데이트!
+    // 상태 업데이트 UI 넘김 
+    state = HomeState(matzipList: matziplist);
   }
 }
 

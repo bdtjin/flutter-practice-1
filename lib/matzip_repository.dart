@@ -16,8 +16,6 @@ class MatzipRepository {
       return Matzip.fromJson(e.data());
     },).toList ();
 
-    // 맛집리스트로 변환??
-    // 맛집리스트 반환
     return matzipList;
   }
 }
